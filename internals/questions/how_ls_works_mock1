@@ -1,0 +1,151 @@
+
+Talk from after presee enter , shell looks for executevals if it is in same program then no forks; 
+otherwise start looking for $PATH and where it is exits.
+FInds the executable calls the fork and spawns child process; child process is in unintruppile stage while copying the contents of parent process( which just
+refreencing to task struct of parent; if there is an change to parent then only copy on write is triggered.
+When child is forked ; scheduler top policy to run the child; so COW does not get triggered. 
+  child ususally has execv which is system call ; it run immediately which loads everything into new space ( TODO what happens when execv is called)
+execv does not return; 
+-
+  exec and ls 
+
+
+
+  
+
+-
+wait is happening on the 
+
+
+
+--------------------------------------------------------------------
+Let me explain process descriptors and page tables in context of process creation and management:
+
+1. Process Descriptor:
+- A data structure (task_struct in Linux) containing all process information
+```c
+struct task_struct {
+    pid_t pid;                  // Process ID
+    struct task_struct *parent; // Pointer to parent process
+    struct mm_struct *mm;       // Memory descriptor
+    struct files_struct *files; // Open files
+    struct signal_struct *sig;  // Signal handlers
+    // ... many more fields
+}
+```
+
+2. Memory Management with fork():
+```c
+pid_t pid = fork();
+```
+What happens:
+- Creates new process descriptor for child
+- Creates new page tables for child
+- Uses Copy-on-Write (COW) for memory pages
+- Child gets copy of parent's:
+  - Code segment
+  - Data segment
+  - Stack
+  - Heap
+  - Page tables
+
+3. Page Tables in Parent and Child:
+```
+Parent Process                Child Process
+Virtual Addr    Physical Addr    Virtual Addr    Physical Addr
+0x1000     ->   0x5000          0x1000     ->   0x5000 (shared)
+0x2000     ->   0x6000          0x2000     ->   0x6000 (shared)
+0x3000     ->   0x7000          0x3000     ->   0x7000 (shared)
+```
+
+4. Copy-on-Write Example:
+```c
+int main() {
+    int data = 100;  // In parent's memory
+    pid_t pid = fork();
+    
+    if (pid == 0) {  // Child
+        data = 200;  // Triggers copy-on-write
+        // Now child has its own copy
+    }
+}
+```
+
+5. exec() Changes:
+```c
+if (pid == 0) {
+    execl("/bin/ls", "ls", NULL);
+}
+```
+What happens:
+- Keeps process descriptor (same PID)
+- Deletes old page tables
+- Creates new page tables for new program
+- Loads new program segments:
+  - New code segment
+  - New data segment
+  - New stack
+  - New heap
+
+6. Memory Layout Before/After exec():
+```
+Before exec():               After exec():
++----------------+          +----------------+
+|  Parent Code   |          |   ls Code     |
++----------------+          +----------------+
+|  Parent Data   |          |   ls Data     |
++----------------+          +----------------+
+|  Parent Stack  |          |   ls Stack    |
++----------------+          +----------------+
+|  Parent Heap   |          |   ls Heap     |
++----------------+          +----------------+
+```
+
+7. Process Descriptor Inheritance:
+- fork() - Child inherits:
+  - Copy of parent's process descriptor
+  - Same environment
+  - Same file descriptors
+  - Copy of parent's page tables
+
+- exec() - Maintains:
+  - Process ID
+  - Parent process
+  - File descriptors (unless marked close-on-exec)
+  - Process credentials
+
+Example showing complete process:
+```c
+int main() {
+    int data = 10;
+    pid_t pid = fork();
+    
+    if (pid == 0) {
+        // Child has copy of parent's page tables
+        data = 20;  // COW triggers
+        
+        execl("/bin/ls", "ls", NULL);
+        // After exec:
+        // - Same PID
+        // - New page tables
+        // - New memory space
+        // - Old memory (including 'data') is gone
+    } else {
+        // Parent continues with original memory
+        wait(NULL);
+    }
+}
+```
+
+This system provides:
+- Memory isolation
+- Efficient process creation
+- Resource sharing when needed
+- Clean process replacement
+- Memory protection
+
+------
+
+
+
+Threads:
