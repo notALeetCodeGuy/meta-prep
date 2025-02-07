@@ -148,4 +148,15 @@ This system provides:
 
 
 
-Threads:
+Threads: in linux, it just process / task struct sharing the same resources
+
+Resources : VM , FS, Open Files?  , Signal Handlers and blocked signals.
+Threads get their own stack.
+Thread is clone :  clone(VM , FS, Open Files?  , Signal Handlers and blocked signals, 0)
+- share vm, fs, open files, signal memory
+
+------------
+
+Fork internally uses clone; threads are just fork with specific flags to share.
+For fork, default is CLONE_VM is set 0; that means separate vm space is created and data copeied to child process
+Having set to 1 means to share.
