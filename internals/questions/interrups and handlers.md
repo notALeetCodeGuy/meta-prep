@@ -37,7 +37,23 @@ request_irq is not atomic.
 ![image](https://github.com/user-attachments/assets/ace9317e-3788-4bf1-9643-7ef5f738b0f1)
 
 
+
+
+
 An example:  
 ![image](https://github.com/user-attachments/assets/aebb2e2c-ec24-4813-9e0a-b97236f9950e)
+RTC : real time clock interrupt
+Whenever a rtc driver loads; rtc_init is invoked?
+Two values are returned from interrupt handler ; either IRQ_HANDLED or IRQ_NONE
+There are locks inside the handler; so that another processsor does not pick up on that.
+Process context can sleep or invoke the scheduler.
 
+-----------------
+
+Interrupt context is not associated with a process context.Without process context how can interrupt context can sleep?
+If a function called from interrupt handler sleeps ; then it can't be called from interrupt handler; as there is no way to wake up without process context
+Interrupt can interrup antoher interrup function on another line; but not on the same line as they are disabled.
+_ Interrupt don't get their own stack; they share 2 pages or 8kb with the process which interrupted it.
+
+<img width="760" alt="image" src="https://github.com/user-attachments/assets/26ed0260-c9f1-4ca6-828a-3cde3b229178" />
 
