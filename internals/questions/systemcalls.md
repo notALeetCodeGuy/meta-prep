@@ -27,3 +27,15 @@ Q: What is buffer and how it is different address soace?
 
 
 Sys calls/kernel is premitible and syscall should be reentrant - means should know for which process it is running the sys call.
+
+
+Accessing system call from user space
+    - C provides library for sys calls ( mostly API)
+    - linux provides macros way to wrap around _syscalln
+
+
+
+Adding system call:
+- add in unistd.h ( call Number NR
+- your decalarations in syscalls.h (asmlinkage returnType functionName(para 1, para 2)
+- add function kernel/sys.c
