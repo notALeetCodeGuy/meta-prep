@@ -112,3 +112,43 @@ On 64 bit system, all memory is low memmory.
 
 
 # User Virtual Memory
+
+- It is non-continous and  page faults ; swap occurs and it needs to be shared across many processes.
+- ![image](https://github.com/user-attachments/assets/015f3742-fb60-44a3-88ec-aab024584619)
+- ![image](https://github.com/user-attachments/assets/0f9c1382-c65c-411c-af3c-43706ca608cc)
+
+- ![image](https://github.com/user-attachments/assets/cd20677f-ba5c-41ce-b6f0-15816d815c20)
+
+# MMU
+
+![image](https://github.com/user-attachments/assets/a920ada7-71f2-4f8f-af1d-ef894e4205ad)
+
+4k is common size for the page.
+  
+![image](https://github.com/user-attachments/assets/9f5a7784-4ac9-4047-9210-dc8b8270296f)
+
+![image](https://github.com/user-attachments/assets/27b9a921-ed8f-43fd-95b2-d9293027aff4)
+
+# Page Faults
+
+![image](https://github.com/user-attachments/assets/c984f746-22e2-4341-bb29-fbdb3f4d1366)
+
+![image](https://github.com/user-attachments/assets/8c79384d-11ea-415f-a803-fc1a28b8997f)
+
+![image](https://github.com/user-attachments/assets/0cab2d3c-b84a-4855-b6ce-3636af45b990)
+
+![image](https://github.com/user-attachments/assets/59c0fbe2-5460-417d-8d89-17aa57d2354b)
+
+# Shared MEmory
+
+
+#Lazy allocation
+![image](https://github.com/user-attachments/assets/defe224b-a9c9-4629-976c-a0317bd52c31)
+
+![image](https://github.com/user-attachments/assets/e602309f-9957-48b5-b221-4b7f9f10877c)
+
+![image](https://github.com/user-attachments/assets/83a1a3f4-7508-4e29-99f5-11ad51732368)
+
+
+
+
