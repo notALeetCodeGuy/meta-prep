@@ -59,4 +59,8 @@ _ Interrupt don't get their own stack; they share 2 pages or 8kb with the proces
 
 ![image](https://github.com/user-attachments/assets/87e14aad-6f9e-4ab1-8705-f8a06066d9df)
 
+- Disabling interrupts disables kernel preemtion.
+-
+- ![image](https://github.com/user-attachments/assets/3c87a794-ec06-480f-ae1a-528d5053cbce)
 
+![image](https://github.com/user-attachments/assets/cdb82754-3b4a-4698-9f84-7a9a94644a35)
