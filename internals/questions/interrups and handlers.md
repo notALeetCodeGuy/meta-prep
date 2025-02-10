@@ -57,3 +57,6 @@ _ Interrupt don't get their own stack; they share 2 pages or 8kb with the proces
 
 <img width="760" alt="image" src="https://github.com/user-attachments/assets/26ed0260-c9f1-4ca6-828a-3cde3b229178" />
 
+![image](https://github.com/user-attachments/assets/87e14aad-6f9e-4ab1-8705-f8a06066d9df)
+
+
