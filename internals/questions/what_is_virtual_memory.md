@@ -70,3 +70,45 @@ SWAP is a way to store some of the RAM memory on disk. That is once the kernel n
 
 
 # Kernel Virtual Memory
+
+![image](https://github.com/user-attachments/assets/1c0b0afa-5801-4762-8c14-4a1edc8b5e9e)
+
+![image](https://github.com/user-attachments/assets/420b0766-9230-4b4a-8c31-8ea58bb1218d)
+
+- On 64 bit you don't have to worry as 2 to power 64 is way greter memory that we perceive today
+
+# Virtual Addresses
+ 
+![image](https://github.com/user-attachments/assets/04e64d6e-72fa-4603-8719-052d09a8c5f4)
+
+![image](https://github.com/user-attachments/assets/29e8426d-4ef7-49ba-a4fd-1a9f178c394a)
+
+
+ ![image](https://github.com/user-attachments/assets/f6f9eb31-b492-49cb-b14c-1df28ebf0c21)
+
+ ![image](https://github.com/user-attachments/assets/98fe0f50-97f0-4173-8bab-a95f5192d5e8)
+
+ ![image](https://github.com/user-attachments/assets/8f9380c2-c8ef-40e1-937e-2c41d630c2ed)
+
+ ![image](https://github.com/user-attachments/assets/c3a81061-79a4-4aa2-ae46-065c76e2b717)
+
+![image](https://github.com/user-attachments/assets/5327fde7-e885-490d-8d86-a3043fc41d92)
+
+ ![image](https://github.com/user-attachments/assets/dcb79a2d-c05e-4d8a-857b-2c847f868d8a)
+
+![image](https://github.com/user-attachments/assets/187f89f5-302d-46e2-8c5e-dd03566f8e17)
+
+![image](https://github.com/user-attachments/assets/2b3f3b14-0ba2-4b67-a71f-2daa26ea792d)
+
+On 64 bit system, all memory is low memmory.
+
+![image](https://github.com/user-attachments/assets/b0430ae7-f905-49de-95bf-402c15d1c523)
+
+![image](https://github.com/user-attachments/assets/90fda82d-b4f1-4250-a2f8-83221dd27bf8)
+
+![image](https://github.com/user-attachments/assets/d8fdebb4-1834-41c1-98aa-1c1d916c8f7c)
+
+![image](https://github.com/user-attachments/assets/48c6d861-8aa5-4a01-b782-ee2893376d7b)
+
+
+# User Virtual Memory
