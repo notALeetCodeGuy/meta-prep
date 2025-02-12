@@ -149,6 +149,17 @@ On 64 bit system, all memory is low memmory.
 
 ![image](https://github.com/user-attachments/assets/83a1a3f4-7508-4e29-99f5-11ad51732368)
 
+########### SWP
+
+
+
+<img width="730" alt="image" src="https://github.com/user-attachments/assets/6118c925-faa3-4d2c-9013-c1a5a69ac277" />
+
+<img width="672" alt="image" src="https://github.com/user-attachments/assets/6fec0815-faeb-40f9-b12f-018fd2e3e97f" />
+
+
+<img width="595" alt="image" src="https://github.com/user-attachments/assets/dd3a61ee-a38a-416e-93cd-65b60c650079" />
+
 
 
 
