@@ -1,0 +1,14 @@
+Virtual address 
+Herachial page table comes into picture.
+
+- After page fault happens?  find page swap page? 
+- Page size ?? 
+
+- Why we small page size? 
+What happens if you disable swap?
+   - RAM uses some part for cache. 
+   - I/o - performance impact will happen?
+- malloc ussage: 
+- How much memory consumeed? top - rss , ps --
+ /proc/
+
