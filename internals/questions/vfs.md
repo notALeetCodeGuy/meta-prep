@@ -18,3 +18,5 @@ inode - when it is created?
 
 
 <img width="646" alt="image" src="https://github.com/user-attachments/assets/d9ac63e6-b9e5-415b-8002-21582ba46bd6" />
+
+<img width="651" alt="image" src="https://github.com/user-attachments/assets/a9925223-75e4-458a-80d5-dd46e138ff71" />
